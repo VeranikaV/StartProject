@@ -14,6 +14,10 @@ public class Guest {
 	void handShakeWithVisitor(){
 		System.out.println("Hi dear, \nnice to see you. I am a new guest here.");
 	}
+	
+	void handShakeWithVisitor1(){
+		System.out.println("My name is "+ firstName + " and I am " + age + " years old");
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -31,11 +35,11 @@ public class Guest {
 		this.lastName = lastName;
 	}
 
-	private int getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	private void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 }
