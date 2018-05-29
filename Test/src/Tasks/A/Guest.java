@@ -15,8 +15,8 @@ public class Guest {
 		System.out.println("Hi dear, \nnice to see you. I am a new guest here.");
 	}
 	
-	void handShakeWithVisitor1(){
-		System.out.println("My name is "+ firstName + " and I am " + age + " years old");
+	void guestIntroduction(){
+		System.out.println("Oh, my name is "+ getFirstName() + " and I am " + getAge() + " years old.");
 	}
 
 	public String getFirstName() {
