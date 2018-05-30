@@ -9,7 +9,7 @@ public class Main {
 		guest.handShakeWithVisitor();
 		visitor.handShakeWithGuest();
 		guest.setAge(35);
-		guest.guestIntroduction();
+		guest.doInformPersonalData();
 	}
 
 }

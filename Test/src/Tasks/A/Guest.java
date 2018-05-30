@@ -35,11 +35,11 @@ public class Guest {
 		this.lastName = lastName;
 	}
 
-	private int getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	private void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 }
