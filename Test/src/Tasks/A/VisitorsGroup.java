@@ -17,7 +17,7 @@ public class VisitorsGroup {
 	randomUser[13] = "Jason";
 	randomUser[14] = "Jacky";
 	
-	for(i = 0; i < 10; i++) {
+	for(i = 0; i < 15; i++) {
 		if(i>= randomUser[4])
 			System.out.println(randomUserOne +Math.random());;
 		
