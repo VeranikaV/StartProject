@@ -20,17 +20,39 @@ public class VisitorsGroup {
 		usersFirstNames[8] = "Corthny";
 		usersFirstNames[9] = "Jason";
 		usersFirstNames[10] = "Jacky";
+		
 	}
-	
+		
 	VisitorsGroup(){
 		populateFirstNames();
 	}
-	//void verifyWhatUserToBeSelectedFirstly() {
-		//System.out.println(randomUserOne +Math.random());
-	//}
-	//void verifyWhatUserToBeSelectedSecondly() {
-		//System.out.println(randomUserTwo +Math.random());	
-		
 	
-
+	private void populateLastNames () {
+		usersLastNames = new String [10];
+		usersLastNames[1]	= "Calkin";
+		usersLastNames[2] = "Riters";
+		usersLastNames[3] = "Hoccing";
+		usersLastNames[4] = "Gracham";
+		usersLastNames[5] = "Rogister";
+		usersLastNames[6] = "Duglas";
+		usersLastNames[7] = "Farrel";
+		usersLastNames[8] = "Luis";
+		usersLastNames[9] = "Jasons";
+		usersLastNames[10] = "Ravera";
+		
+	}
+	
+	public void VisitorsGroupLasttName(){
+		populateLastNames();
+	}
+	
+	public int getRandomLastNames(int lastName) {
+	    int randomlastName = USER_NUMBER_LOW_LIMIT +(int)(Math.random() * ((USER_NUMBER_UPPER_LIMIT - USER_NUMBER_LOW_LIMIT) + 1));
+	    return randomlastName;
+	}
+	
+	public int getRandomFirstNames(int firstName) {
+	    int randomfirsttName = USER_NUMBER_LOW_LIMIT +(int)(Math.random() * ((USER_NUMBER_UPPER_LIMIT - USER_NUMBER_LOW_LIMIT) + 1));
+	    return randomfirsttName;
+	}
 }
