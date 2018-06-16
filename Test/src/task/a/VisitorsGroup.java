@@ -1,4 +1,4 @@
-package Tasks.A;
+package task.a;
 
 public class VisitorsGroup {
 	private final int USER_NUMBER_LOW_LIMIT = 5;
@@ -29,7 +29,7 @@ public class VisitorsGroup {
 	
 	private void populateLastNames () {
 		usersLastNames = new String [10];
-		usersLastNames[1]	= "Calkin";
+		usersLastNames[1] = "Calkin";
 		usersLastNames[2] = "Riters";
 		usersLastNames[3] = "Hoccing";
 		usersLastNames[4] = "Gracham";
@@ -39,6 +39,7 @@ public class VisitorsGroup {
 		usersLastNames[8] = "Luis";
 		usersLastNames[9] = "Jasons";
 		usersLastNames[10] = "Ravera";
+	
 		
 	}
 	
@@ -46,13 +47,15 @@ public class VisitorsGroup {
 		populateLastNames();
 	}
 	
-	public int getRandomLastNames(int lastName) {
-	    int randomlastName = USER_NUMBER_LOW_LIMIT +(int)(Math.random() * ((USER_NUMBER_UPPER_LIMIT - USER_NUMBER_LOW_LIMIT) + 1));
-	    return randomlastName;
+	public int getIndexRandomLastNames(String populateLastNames) {
+		
+		int indexRandomLastName = (int)(Math.random()*usersLastNames.length);
+		
+	    return indexRandomLastName;
+	     
+		
 	}
 	
-	public int getRandomFirstNames(int firstName) {
-	    int randomfirsttName = USER_NUMBER_LOW_LIMIT +(int)(Math.random() * ((USER_NUMBER_UPPER_LIMIT - USER_NUMBER_LOW_LIMIT) + 1));
-	    return randomfirsttName;
-	}
+	
+	
 }

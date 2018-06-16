@@ -1,4 +1,4 @@
-package Tasks.A;
+package task.a;
 
 public class Visitor {
 	void handShakeWithGuest(){
