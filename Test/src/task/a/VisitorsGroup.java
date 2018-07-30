@@ -1,12 +1,17 @@
 package task.a;
 
+
 public class VisitorsGroup {
+	
+	
+	@SuppressWarnings("unused")
 	private final int USER_NUMBER_LOW_LIMIT = 5;
+	
+	@SuppressWarnings("unused")
 	private final int USER_NUMBER_UPPER_LIMIT = 15;
 	
 	private static String[] usersFirstNames;
 	private static String[] usersLastNames;
-
 	
 	private void populateFirstNames () {
 		usersFirstNames = new String [10];
