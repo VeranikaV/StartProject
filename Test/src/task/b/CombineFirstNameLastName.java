@@ -2,9 +2,12 @@ package task.b;
 
 import java.util.Arrays;
 
+import task.utilities.MathHelper;
+
 import task.utilities.MathMultiHelper;
 
 public class CombineFirstNameLastName {
+	private static final int arrayLength = 5;
 	public static void main(String[] args) {
 		String [] arrayFirstName = doGenerateFirstNameArray();
 		for(int i=0; i< arrayFirstName.length-1; i++) {
@@ -18,29 +21,26 @@ public class CombineFirstNameLastName {
 		for(int i=0; i< arraySecondName.length-1; i++) {
 			System.out.println(arraySecondName[i]);
 			}
+		String generatePersonIdentity = doGeneatePersonIdentity(arrayFirstName,arrayLastName,arraySecondName);
+		 
+		System.out.println(generatePersonIdentity);
+		
+		
 	}
 	private static String[] doGenerateFirstNameArray() {
-		String []  firstNameArray= new String[5];
-		
+		String []  firstNameArray= new String[arrayLength];
 		
 		firstNameArray[0] = "Macclen";
 		firstNameArray[1] = "Loran";
 		firstNameArray[2] = "Gotie";
 		firstNameArray[3] = "Monro";
 		firstNameArray[4] = "Loren";
-		
-		
-		for (int i=0; i <= firstNameArray.length-1; i ++ ){
-			
-			int index = MathMultiHelper.random(0, firstNameArray.length-1);
-			String firstNameArrayItem = firstNameArray[index];
-			System.out.println(firstNameArrayItem);
-		}
+				
 		return firstNameArray;
 	}
 	
 	private static String[] doGenerateLastNameArray() {
-		String []  lastNameArray = new String[5];
+		String []  lastNameArray = new String[arrayLength];
 		
 		lastNameArray [0] ="Helen";
 		lastNameArray [1] = "Han";
@@ -48,17 +48,11 @@ public class CombineFirstNameLastName {
 		lastNameArray [3] = "Ben";
 		lastNameArray [4] = "Luc";
 
-		for (int i=0; i <= lastNameArray.length-1; i ++ ){
-			
-			int index = MathMultiHelper.random(0, lastNameArray.length-1);
-			String lastNameArrayItem = lastNameArray[index];
-			System.out.println(lastNameArrayItem);
-		}
 		return lastNameArray;
 	}
 	
 	private static String[] doGenerateSecondNameArray() {
-		String []  secondNameArray = new String [5];
+		String []  secondNameArray = new String [arrayLength];
 		
 		secondNameArray[0] = "Max";
 		secondNameArray[1] = "Oli";
@@ -66,16 +60,9 @@ public class CombineFirstNameLastName {
 		secondNameArray[3] = "Mari";
 		secondNameArray[4] = "Peter";
 	
-		 
-		for (int i=0; i <= secondNameArray.length-1; i ++ ){
-			
-			int index = MathMultiHelper.random(0, secondNameArray.length-1);
-			String secondNameArrayItem = secondNameArray[index];
-			System.out.println(secondNameArrayItem);
-		}
 		return secondNameArray;
 	}
-	private static String doCalculateFirstLastSecondName(String [] arrayFirstName,String [] arrayLastName,String [] arraySecondName) {
+	private static String doGeneatePersonIdentity(String [] arrayFirstName,String [] arrayLastName,String [] arraySecondName) {
 		
 		//3
 		StringBuilder processingLog = new StringBuilder();
@@ -88,9 +75,9 @@ public class CombineFirstNameLastName {
 		int randomArrayIndexFirstNameItem;
 		int randomArrayIndexLastNameItem;
 		int randomArrayIndexSecondNameItem;
-		
 	
-		for (int i=0; i <=4 ; i ++ ) {
+	
+		for (int i=0; i <= arrayLength ; i ++ ) {
 			//Make a single calculation!!!
 			randomArrayIndexFirstNameItem = MathHelper.random(0, arrayFirstNameLength);
 			randomArrayIndexLastNameItem = MathHelper.random(0, arrayLasttNameLength);
@@ -114,10 +101,8 @@ public class CombineFirstNameLastName {
 		processingLog.append("\n\nFinal result:");
 		processingLog.append(randomSumm);*/
 		}
-		
-
-		
 		return processingLog.toString();
-	}*/	
+	}
 }
-}
+	
+
