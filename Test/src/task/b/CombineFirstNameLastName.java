@@ -102,12 +102,11 @@ public class CombineFirstNameLastName {
 			patronymicRandomIndex = MathHelper.random(0, arrayPatronymicLength);	
 			//Get randomly patronumic
 			patronymicRandomItem = arrayPatronymic[patronymicRandomIndex];
-			personsIdentity.append("\nfirst name: ");
 			personsIdentity.append(firstNameRandomItem);
-			personsIdentity.append("\nlast name: ");
 			personsIdentity.append(lastNameRandomItem);
-			personsIdentity.append("\npatronymic: ");
 			personsIdentity.append(patronymicRandomItem);
+			personsIdentity.append("\n");
+			
 								
 		}
 		
