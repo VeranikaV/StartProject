@@ -6,17 +6,22 @@ import task.utilities.MathHelper;
 
 import task.utilities.MathMultiHelper;
 
+/*import task.utilities.MathMultiHelper;*/
+
 public class CombineFirstNameLastName {
 	private static final int NUMBER_FIRST_NAME_GENERATED = 10;
 	private static final int NUMBER_PATRONYMIC_GENERATED = 8;
 	private static final int NUMBER_LAST_NAME_GENERATED = 7;
 	private static final int NUMBER_PEOPLE_GENERATED = 4;
+	private static final int NUMBER_PHONE_COUNTRY_CODE = +37529;
+	private static final int NUMBER_PHONE_GENERATED = 7;
 	public static void main(String[] args) {
 		String [] arrayFirstName = doGenerateFirstNameArray();		
 		String [] arrayLastName = doGenerateLastNameArray();		
 		String [] arrayPatronymic = doGeneratePatronymicArray();
+		int [] arrayNumber = doGenerateNumberArray();
 		
-		String generatePersonIdentity = doGeneatePersonIdentity(arrayFirstName,arrayLastName,arrayPatronymic);		 
+		String generatePersonIdentity = doGeneatePersonIdentity(arrayFirstName,arrayLastName,arrayPatronymic,arrayNumber);		 
 		System.out.println(generatePersonIdentity);		
 	}
 	private static String[] doGenerateFirstNameArray() {
@@ -67,7 +72,25 @@ public class CombineFirstNameLastName {
 	
 		 return patronymicsArray;
 	}
-	private static String doGeneatePersonIdentity(String [] arrayFirstName,String [] arrayLastName,String [] arrayPatronymic) {
+	private static int [] doGenerateNumberArray() {
+		
+		StringBuilder personsPhoneNumber = new StringBuilder();
+		
+		int randomValue;
+		
+			for (int i=0; i <= NUMBER_PHONE_GENERATED ; i ++ ) {
+				
+				randomValue = MathHelper.random(0, 9);
+				
+				personsPhoneNumber.append(randomValue);
+				personsPhoneNumber.append("\n");
+				
+			}
+				
+		
+		return personsPhoneNumber();
+	}
+	private static String doGeneatePersonIdentity(String [] arrayFirstName,String [] arrayLastName,String [] arrayPatronymic,int [] arrayNumber) {
 		
 		//3
 		StringBuilder personsIdentity = new StringBuilder();
@@ -75,10 +98,11 @@ public class CombineFirstNameLastName {
 		int arrayFirstNameLength = arrayFirstName.length-1;
 		int arrayLastNameLength = arrayLastName.length-1;
 		int arrayPatronymicLength = arrayPatronymic.length-1;
-		
+				
 		int firstNameRandomIndex;
 		int lastNameRandomIndex;
 		int patronymicRandomIndex;
+		
 	
 		//TODO: answer the question: why does Eclipse pay your attention to 3 lines below?
 		//TODO: because of that's unused, what will happen with the lines after build?
@@ -86,6 +110,7 @@ public class CombineFirstNameLastName {
 		String firstNameRandomItem;
 		String lastNameRandomItem;
 		String patronymicRandomItem;
+		
 	
 	
 		for (int i=0; i <= NUMBER_PEOPLE_GENERATED ; i ++ ) {
@@ -102,12 +127,14 @@ public class CombineFirstNameLastName {
 			patronymicRandomIndex = MathHelper.random(0, arrayPatronymicLength);	
 			//Get randomly patronumic
 			patronymicRandomItem = arrayPatronymic[patronymicRandomIndex];
+			
+			
 			personsIdentity.append(firstNameRandomItem);
 			personsIdentity.append(" ");
 			personsIdentity.append(lastNameRandomItem);
 			personsIdentity.append(" ");
 			personsIdentity.append(patronymicRandomItem);
-			personsIdentity.append("\n");
+	 		personsIdentity.append("\n");
 			
 								
 		}
