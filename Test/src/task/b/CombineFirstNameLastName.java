@@ -14,14 +14,13 @@ public class CombineFirstNameLastName {
 	private static final int NUMBER_LAST_NAME_GENERATED = 7;
 	private static final int NUMBER_PEOPLE_GENERATED = 4;
 	private static final int NUMBER_PHONE_COUNTRY_CODE = +37529;
-	private static final int NUMBER_PHONE_GENERATED = 7;
+	private static final int NUMBER_PHONE_DIGIT = 7;
 	public static void main(String[] args) {
 		String [] arrayFirstName = doGenerateFirstNameArray();		
 		String [] arrayLastName = doGenerateLastNameArray();		
 		String [] arrayPatronymic = doGeneratePatronymicArray();
-		int [] arrayNumber = doGenerateNumberArray();
-		
-		String generatePersonIdentity = doGeneatePersonIdentity(arrayFirstName,arrayLastName,arrayPatronymic,arrayNumber);		 
+		String phoneNumber = 	doGeneratePhoneNumber();	
+		String generatePersonIdentity = doGeneatePersonIdentity(arrayFirstName,arrayLastName,arrayPatronymic,phoneNumber);		 
 		System.out.println(generatePersonIdentity);		
 	}
 	private static String[] doGenerateFirstNameArray() {
@@ -72,25 +71,24 @@ public class CombineFirstNameLastName {
 	
 		 return patronymicsArray;
 	}
-	private static int [] doGenerateNumberArray() {
+	private static String doGeneratePhoneNumber() {
 		
 		StringBuilder personsPhoneNumber = new StringBuilder();
 		
 		int randomValue;
+		personsPhoneNumber.append(NUMBER_PHONE_COUNTRY_CODE);
 		
-			for (int i=0; i <= NUMBER_PHONE_GENERATED ; i ++ ) {
+			for (int i=0; i <= NUMBER_PHONE_DIGIT ; i ++ ) {
 				
 				randomValue = MathHelper.random(0, 9);
 				
 				personsPhoneNumber.append(randomValue);
-				personsPhoneNumber.append("\n");
-				
+							
 			}
 				
-		
-		return personsPhoneNumber();
+		return personsPhoneNumber.toString();
 	}
-	private static String doGeneatePersonIdentity(String [] arrayFirstName,String [] arrayLastName,String [] arrayPatronymic,int [] arrayNumber) {
+	private static String doGeneatePersonIdentity(String [] arrayFirstName,String [] arrayLastName,String [] arrayPatronymic,  String phoneNumber) {
 		
 		//3
 		StringBuilder personsIdentity = new StringBuilder();
